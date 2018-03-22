@@ -3,17 +3,23 @@ pipeline {
     stages {
         stage('prepare') {
             steps {
-                sh 'echo prepare'
+                sh 'npm install'
             }
         }
-        stage('build') {
+        stage('lint') {
             steps {
-                sh 'echo build'
+                sh 'npm run lint'
             }
         }
         stage('test') {
             steps {
-                sh 'echo testing...'
+                sh 'npm run test:unit'
+                sh 'npm run test:integration'
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'npm run build'
             }
         }
         stage('package') {
