@@ -18,8 +18,8 @@ pipeline {
         }
         stage('package') {
             steps {
-                sh 'building docker image...'
-                sh 'pushing to ECR'
+                sh 'echo building docker image...'
+                sh 'echo pushing to ECR'
             }
         }
     }
