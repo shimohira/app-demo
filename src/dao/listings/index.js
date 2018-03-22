@@ -1,11 +1,43 @@
-import SolrClient from '../helper/SolrClient';
-const LISTING_CORE = 'listings';
-const { client: listingClient } = new SolrClient(LISTING_CORE);
-
 export default {
   search: async(id) => {
-    const conditionQ = id ? `documentid:${id}` : '*:*';
-    const queryListingById = listingClient.createQuery().q(conditionQ).start(0).rows(10);
-    return await listingClient.searchAsync(queryListingById);
+    return id ? searchWithId(id) : search();
   }
+};
+
+const search = () => {
+  return {
+    responseHeader: {
+      status: 0
+    },
+    response: {
+      numFound: 2,
+      docs: [
+        {
+          documentid: '6000011',
+          channels: 'buy'
+        },
+        {
+          documentid: '6000012',
+          channels: 'buy'
+        },
+      ]
+    }
+  };
+};
+
+const searchWithId = (id) => {
+  return {
+    responseHeader: {
+      status: 0
+    },
+    response: {
+      numFound: 1,
+      docs: [
+        {
+          documentid: '6000011',
+          channels: 'buy'
+        }
+      ]
+    }
+  };
 };

@@ -1,6 +1,0 @@
-{
-    "solrConfig": {
-        "solrHost": "127.0.0.1",
-        "solrPort": 8983
-    }
-}

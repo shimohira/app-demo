@@ -5,7 +5,7 @@
   "scripts": {
     "start": "nodemon --exec babel-node ./src/bin/server.js",
     "beforeTest": "babel-node ./test/fixture/seed.js",
-    "test:integration": "cross-env NODE_ENV=test npm run beforeTest && nyc mocha ./test/integration --require babel-register --require babel-polyfill",
+    "test:integration": "cross-env NODE_ENV=test && nyc mocha ./test/integration --require babel-register --require babel-polyfill",
     "test:unit": "cross-env NODE_ENV=test nyc mocha ./test/unit --require babel-register --require babel-polyfill ",
     "build": "babel src -d dist",
     "lint": "eslint ./src --cache --ignore-pattern .gitignore",
@@ -31,10 +31,8 @@
     ]
   },
   "dependencies": {
-    "bluebird": "^3.5.1",
     "body-parser": "~1.18.2",
-    "express": "~4.15.5",
-    "solr-client": "^0.7.0"
+    "express": "~4.15.5"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -46,6 +44,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0",
+    "bluebird": "^3.5.1",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "chai-http": "^3.0.0",
