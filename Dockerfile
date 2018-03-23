@@ -4,9 +4,9 @@ COPY . /source
 
 WORKDIR /source
 
-RUN npm install
-
-
 EXPOSE 9000
 
-CMD ["npm", "start"]
+RUN npm install && npm install -g pm2
+RUN npm run build
+
+CMD ["pm2-docker", "start", "dist/bin/server.js"]
