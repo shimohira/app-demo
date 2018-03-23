@@ -24,7 +24,7 @@ pipeline {
         }
         stage('package') {
             steps {
-                sh 'echo building docker image...'
+                sh 'docker build -t demo-app:${env.BUILD_ID} .'
                 sh 'echo pushing to ECR'
             }
         }
