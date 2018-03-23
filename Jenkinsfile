@@ -24,8 +24,8 @@ pipeline {
         }
         stage('package') {
             steps {
-                sh "docker build -t demo-app:${env.BUILD_NUMBER} ."
-                sh 'echo pushing to ECR'
+                sh "docker build -t 394595319667.dkr.ecr.ap-northeast-1.amazonaws.com/liuliang-app-demo:${env.BUILD_NUMBER} ."
+                sh "docker push 394595319667.dkr.ecr.ap-northeast-1.amazonaws.com/liuliang-app-demo:${env.BUILD_NUMBER}"
             }
         }
     }
