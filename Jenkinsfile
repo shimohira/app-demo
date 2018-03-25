@@ -30,7 +30,9 @@ pipeline {
             }
         }
         stage('deploy to dev') {
-            build job: 'deploy-app-demo', parameters: [[$class: 'StringParameterValue', name: 'BUILD_NUMBER', value: '${env.BUILD_NUMBER}']]
+            steps {
+                build job: 'deploy-app-demo', parameters: [[$class: 'StringParameterValue', name: 'BUILD_NUMBER', value: '${env.BUILD_NUMBER}']]
+            }
         }
     }
 }
