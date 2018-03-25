@@ -14,11 +14,13 @@ const search = () => {
       docs: [
         {
           documentid: '6000011',
-          channels: 'buy'
+          channels: 'buy',
+          price: 2500000
         },
         {
           documentid: '6000012',
-          channels: 'buy'
+          channels: 'buy',
+          price: 3200000
         },
       ]
     }
@@ -35,7 +37,8 @@ const searchWithId = (id) => {
       docs: [
         {
           documentid: '6000011',
-          channels: 'buy'
+          channels: 'buy',
+          price: 2500000
         }
       ]
     }
