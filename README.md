@@ -1,2 +1,3 @@
 # Pipeline demo app
-Demo app used for pipeline training
+Demo app used for pipeline workshop
+
