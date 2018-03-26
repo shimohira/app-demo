@@ -32,7 +32,7 @@ pipeline {
         }
         stage('deploy to dev') {
             steps {
-                build job: 'deploy-app-demo', parameters: [[$class: 'StringParameterValue', name: 'BUILD_NUMBER', value: "${env.BUILD_NUMBER}"]], wait: false
+                build job: 'liu.liang/liuliang-demo-app-deployment-dev', parameters: [[$class: 'StringParameterValue', name: 'BUILD_NUMBER', value: "${env.BUILD_NUMBER}"]], wait: false
             }
         }
     }
