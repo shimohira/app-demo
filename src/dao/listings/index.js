@@ -15,12 +15,14 @@ const search = () => {
         {
           documentid: '6000011',
           channels: 'buy',
-          price: 2500000
+          price: 2500000,
+          currency: 'IDR'
         },
         {
           documentid: '6000012',
           channels: 'buy',
-          price: 3200000
+          price: 3200000,
+          currency: 'IDR'
         },
       ]
     }
