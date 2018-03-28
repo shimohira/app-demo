@@ -17,7 +17,7 @@ const search = () => {
           channels: 'buy',
           price: 2500000,
           currency: 'IDR',
-          bedrooms: 2
+          bedrooms: 1
         },
         {
           documentid: '6000012',
